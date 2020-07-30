@@ -1,0 +1,86 @@
+{
+  "RequestInfo":{
+   "apiId":"Rainmaker",
+   "ver":".01",
+   "ts":0,
+   "action":"_create",
+   "did":"1",
+   "key":"",
+   "msgId":"20170310130900|en_IN",
+   "authToken":"d21b7506-31be-4280-a94d-6c89b0805392",
+   "correlationId":"",
+   "userInfo":{
+      "id":167,
+      "userName":"9876567890",
+      "salutation":null,
+      "name":"Tushar",
+      "gender":null,
+      "mobileNumber":"9876567890",
+      "emailId":null,
+      "altContactNumber":null,
+      "pan":null,
+      "aadhaarNumber":null,
+      "permanentAddress":null,
+      "permanentCity":null,
+      "permanentPinCode":null,
+      "correspondenceAddress":null,
+      "correspondenceCity":null,
+      "correspondencePinCode":null,
+      "active":true,
+      "locale":null,
+      "type":"CITIZEN",
+      "accountLocked":false,
+      "accountLockedDate":0,
+      "fatherOrHusbandName":null,
+      "signature":null,
+      "bloodGroup":null,
+      "photo":null,
+      "identificationMark":null,
+      "createdBy":0,
+      "lastModifiedBy":1,
+      "tenantId":"ch",
+      "roles":[
+         {
+            "code":"CITIZEN",
+            "name":"Citizen",
+            "tenantId":"ch"
+         }
+      ],
+      "uuid":"6a9c0fb2-6579-441e-a46f-1e5e84ee6655",
+      "createdDate":"30-01-2020 06:07:52",
+      "lastModifiedDate":"02-03-2020 06:01:05",
+      "dob":null,
+      "pwdExpiryDate":"29-04-2020 06:07:52"
+   }
+}, 
+  "RequestBody":{ 
+  "tenantId":"ch.chandigarh",
+  "pressNoteUuid":"8b32cfdf-1add-46b4-bd7a-63a7c11eac53",
+  "pressNoteSubject":"Hi event updated",
+  "pressNoteDate":"21/01/2015",
+  "filenumber":"123456",
+  "noteContent":"please check",
+  "smsContent":"hhgg",
+  "emailContent":[ {
+   "emailSubject":"updated subject",
+   "emailBody":"updated body"
+	    }],
+  "moduleCode":"PR",
+  "templateType":"press_note",
+  "documentAttachment":[{"fileStoreId":"123323435345464564"}],
+  "publicationList":[
+	    {
+   "pressMasterUuid":"3bf86272-a73b-4fa0-8da6-29bbecd58239"
+	    },
+	     {
+   "pressMasterUuid":"e060b9e2-7679-460c-9941-28265ee313ae"
+	    }
+  ]
+ },
+ "AuditDetails":{
+  "createdBy":"jyoti",
+  "createdTime":"1111",
+  "lastModifiedBy":"2343534534",
+  "lastModifiedTime":"1513336614101"
+ }
+}

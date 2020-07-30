@@ -1,0 +1,133 @@
+serviceMaps:
+ serviceName: Public Relation Service
+ mappings:
+ - version: 1.0
+   name: Public Relation
+   description: create committeeCompleteDetails in egpr_committee_detail,egpr_committee_member
+   fromTopic: create-committee-topic
+   isTransaction : true
+   queryMaps: 
+    - query: INSERT INTO egpr_committee_detail(committee_uuid, committee_name, committee_description, is_active, tenant_id, module_code, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+      basePath: $.RequestBody.*
+      jsonMaps:
+       - jsonPath: $.RequestBody.*.committeeUuid
+
+       - jsonPath: $.RequestBody.*.committeeName
+         
+       - jsonPath: $.RequestBody.*.committeeDescription
+
+       - jsonPath: $.RequestBody.*.isActive
+       
+       - jsonPath: $.RequestBody.*.tenantId
+
+       - jsonPath: $.RequestBody.*.moduleCode
+       
+       - jsonPath: $.RequestBody.*.createdBy
+       
+       - jsonPath: $.RequestBody.*.createdTime
+       
+       - jsonPath: $.RequestBody.*.lastModifiedBy
+       
+       - jsonPath: $.RequestBody.*.lastModifiedTime
+       
+       
+    - query : INSERT INTO egpr_committee_member(committee_member_uuid, committee_uuid, department_name, user_uuid, department_uuid, tenant_id, module_code,is_active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+      basePath: $.RequestBody.*.committeeMember.*
+      jsonMaps:
+       - jsonPath: $.RequestBody.*.committeeMember.*.committeeMemberUuid
+
+       - jsonPath: $.RequestBody.*.committeeMember.*.committeeUuid
+         
+       - jsonPath: $.RequestBody.*.committeeMember.*.departmentName
+
+       - jsonPath: $.RequestBody.*.committeeMember.*.userUuid
+       
+       - jsonPath: $.RequestBody.*.committeeMember.*.departmentUuid
+
+       - jsonPath: $.RequestBody.*.committeeMember.*.tenantId
+
+       - jsonPath: $.RequestBody.*.committeeMember.*.moduleCode
+       
+       - jsonPath: $.RequestBody.*.committeeMember.*.isActive
+      
+       - jsonPath: $.RequestBody.*.committeeMember.*.createdBy
+       
+       - jsonPath: $.RequestBody.*.committeeMember.*.createdTime
+       
+       - jsonPath: $.RequestBody.*.committeeMember.*.lastModifiedBy
+       
+       - jsonPath: $.RequestBody.*.committeeMember.*.lastModifiedTime  
+     
+ 
+ - version: 1.0
+   name: Public Relation
+   description: update committeeCompleteDetails in egpr_committee_detail,egpr_committee_member
+   fromTopic: update-committee-topic
+   isTransaction : true
+   queryMaps: 
+    - query: UPDATE egpr_committee_detail SET committee_name=?, committee_description=?, is_active=?,  last_modified_by=?, last_modified_time=? WHERE committee_uuid=?;
+      basePath: $.RequestBody.*
+      jsonMaps:           
+       - jsonPath: $.RequestBody.*.committeeName
+         
+       - jsonPath: $.RequestBody.*.committeeDescription
+
+       - jsonPath: $.RequestBody.*.isActive
+       
+       - jsonPath: $.RequestBody.*.lastModifiedBy
+       
+       - jsonPath: $.RequestBody.*.lastModifiedTime
+   
+       - jsonPath: $.RequestBody.*.committeeUuid
+       
+
+    - query: DELETE FROM egpr_committee_member WHERE committee_uuid=?;
+      basePath: $.RequestBody.*
+      jsonMaps:
+       - jsonPath: $.RequestBody.*.committeeUuid
+
+
+    - query : INSERT INTO egpr_committee_member(committee_member_uuid, committee_uuid, department_name, user_uuid, department_uuid, tenant_id, module_code,is_active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+      basePath: $.RequestBody.*.committeeMember.*
+      jsonMaps:
+       - jsonPath: $.RequestBody.*.committeeMember.*.committeeMemberUuid
+
+       - jsonPath: $.RequestBody.*.committeeMember.*.committeeUuid
+         
+       - jsonPath: $.RequestBody.*.committeeMember.*.departmentName
+
+       - jsonPath: $.RequestBody.*.committeeMember.*.userUuid
+       
+       - jsonPath: $.RequestBody.*.committeeMember.*.departmentUuid
+
+       - jsonPath: $.RequestBody.*.committeeMember.*.tenantId
+
+       - jsonPath: $.RequestBody.*.committeeMember.*.moduleCode
+       
+       - jsonPath: $.RequestBody.*.committeeMember.*.isActive
+      
+       - jsonPath: $.RequestBody.*.committeeMember.*.createdBy
+       
+       - jsonPath: $.RequestBody.*.committeeMember.*.createdTime
+       
+       - jsonPath: $.RequestBody.*.committeeMember.*.lastModifiedBy
+       
+       - jsonPath: $.RequestBody.*.committeeMember.*.lastModifiedTime
+       
+       
+ - version: 1.0
+   name: Public Relation
+   description: delete committeeCompleteDetails in egpr_committee_detail
+   fromTopic: delete-committee-topic
+   isTransaction : true
+   queryMaps: 
+    - query: UPDATE egpr_committee_detail SET is_active=?,  last_modified_by=?, last_modified_time=? WHERE committee_uuid=?;
+      basePath: $.RequestBody.*
+      jsonMaps:           
+       - jsonPath: $.RequestBody.*.isActive
+       
+       - jsonPath: $.RequestBody.*.lastModifiedBy
+       
+       - jsonPath: $.RequestBody.*.lastModifiedTime
+   
+       - jsonPath: $.RequestBody.*.committeeUuid

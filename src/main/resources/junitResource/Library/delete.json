@@ -1,0 +1,79 @@
+{
+  "RequestInfo":{
+   "apiId":"Rainmaker",
+   "ver":".01",
+   "ts":0,
+   "action":"_create",
+   "did":"1",
+   "key":"",
+   "msgId":"20170310130900|en_IN",
+   "authToken":"d21b7506-31be-4280-a94d-6c89b0805392",
+   "correlationId":"",
+   "userInfo":{
+      "id":167,
+      "userName":"9876567890",
+      "salutation":null,
+      "name":"Tushar",
+      "gender":null,
+      "mobileNumber":"9876567890",
+      "emailId":null,
+      "altContactNumber":null,
+      "pan":null,
+      "aadhaarNumber":null,
+      "permanentAddress":null,
+      "permanentCity":null,
+      "permanentPinCode":null,
+      "correspondenceAddress":null,
+      "correspondenceCity":null,
+      "correspondencePinCode":null,
+      "active":true,
+      "locale":null,
+      "type":"CITIZEN",
+      "accountLocked":false,
+      "accountLockedDate":0,
+      "fatherOrHusbandName":null,
+      "signature":null,
+      "bloodGroup":null,
+      "photo":null,
+      "identificationMark":null,
+      "createdBy":0,
+      "lastModifiedBy":1,
+      "tenantId":"ch",
+      "roles":[
+         {
+            "code":"CITIZEN",
+            "name":"Citizen",
+            "tenantId":"ch"
+         }
+      ],
+      "uuid":"6a9c0fb2-6579-441e-a46f-1e5e84ee6655",
+      "createdDate":"30-01-2020 06:07:52",
+      "lastModifiedDate":"02-03-2020 06:01:05",
+      "dob":null,
+      "pwdExpiryDate":"29-04-2020 06:07:52"
+   }
+}, 
+   "RequestBody":{
+      "tenantId":"ch.chandigah",
+      "eventDetailUuid":"1717b7c9-1340-4f75-af05-b474807ea765",
+      "moduleCode":"PR",
+   
+	    "documentList":[
+	  {
+	   "documentType":"",
+	   "documentId":[
+	    {
+	     "fileStoreId":"32f9ae0f-49a1-415e-afd3-d92afdaa29ea"
+	    }
+	   ]
+	  }
+  ]},
+ "AuditDetails":{
+  "createdBy":"65a14e00-ba5e-4347-be81-08fc04bb05215465",
+  "createdTime":"1513336614101",
+  "lastModifiedBy":"65a14e00-ba5e-4347-be81-08fc04bb05215465",
+  "lastModifiedTime":"1513336614101"
+ }
+
+
+}

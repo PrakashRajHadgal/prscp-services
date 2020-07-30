@@ -1,0 +1,17 @@
+serviceMaps:
+ serviceName: Public Relation
+ mappings:
+ - version: 1.0
+   name: Create Tender
+   description: create tender
+   fromTopic: create-tender-notice
+   queryMaps:
+      -  query: INSERT INTO public.egpr_tender_notice(tender_subject, tender_date, file_number, note_content,   tender_notice_status, is_active, created_by, created_time, last_modified_by, last_modified_time, tenant_id)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+         basePath: $.RequestBody.*
+         jsonMaps:
+         -  jsonPath: $.RequestBody.*.tenantId
+         -  jsonPath: $.RequestBody.*.tenderSubject
+         -  jsonPath: $.RequestBody.*.tenderDate
+         -  jsonPath: $.RequestBody.*.fileNumber
+         -  jsonPath: $.RequestBody.*.noteContent
+         -  jsonPath: $.RequestBody.*.tenderNoticeStatus

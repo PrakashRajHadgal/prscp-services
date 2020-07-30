@@ -1,0 +1,153 @@
+serviceMaps:
+ serviceName: pr-services
+ mappings:
+ - version: 1.0
+   description: pr-services save data
+   fromTopic: save-pr-eventdetail-topic
+   isTransaction: true
+   queryMaps:
+
+       - query: INSERT INTO public.egpr_event_detail(event_detail_uuid, event_title, event_location, sector,organizer_department_name,organizer_user_uuid, organizer_user_name, facebook_url, twitter_url,instagram_url, start_date, start_time, end_date, end_time, event_description,event_type,event_budget, committee_uuid, event_status,is_active, created_by, created_time, last_modified_by, last_modified_time,event_id, tenant_id,event_image,locality_name,module_code) VALUES (?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?::time, ?,?::time, ?, ?, ?,  ?, ?, ?, ?, ?, ?, ?, ?, ?,to_json(?::json),?,?);
+       
+         basePath: RequestBody
+         jsonMaps:
+          - jsonPath: $.RequestBody.eventDetailUuid
+
+          - jsonPath: $.RequestBody.eventTitle
+
+          - jsonPath: $.RequestBody.eventLocation
+
+          - jsonPath: $.RequestBody.sector
+
+          - jsonPath: $.RequestBody.organizerDepartmentName
+
+          - jsonPath: $.RequestBody.organizerDepartmentUserUuid
+
+          - jsonPath: $.RequestBody.organizerUsernName
+
+          - jsonPath: $.RequestBody.facebookUrl
+
+          - jsonPath: $.RequestBody.twitterUrl
+
+          - jsonPath: $.RequestBody.instagramUrl
+
+          - jsonPath: $.RequestBody.startDate
+            type: DATE
+            dbType: DATE
+                        
+          - jsonPath: $.RequestBody.startTime
+      
+          - jsonPath: $.RequestBody.endDate
+            type: DATE
+            dbType: DATE
+
+          - jsonPath: $.RequestBody.endTime
+           
+          - jsonPath: $.RequestBody.eventDescription
+
+          - jsonPath: $.RequestBody.eventType
+
+          - jsonPath: $.RequestBody.eventBudget
+                    
+          - jsonPath: $.RequestBody.committeeUuid
+          
+          - jsonPath: $.RequestBody.eventStatus
+
+          - jsonPath: $.RequestBody.isActive
+
+          - jsonPath: $.RequestBody.createdBy
+
+          - jsonPath: $.RequestBody.createdTime
+          
+          - jsonPath: $.RequestBody.lastModifiedBy
+          
+          - jsonPath: $.RequestBody.lastModifiedTime
+          
+          - jsonPath: $.RequestBody.eventId
+
+          - jsonPath: $.RequestBody.tenantId  
+          
+          - jsonPath: $.RequestBody.eventString
+          
+          - jsonPath: $.RequestBody.area  
+          
+          - jsonPath: $.RequestBody.moduleCode
+          
+ - version: 1.0
+   description: pr-services update data
+   fromTopic: update-pr-event-detail-topic
+   isTransaction: true
+   queryMaps:
+       - query: UPDATE public.egpr_event_detail SET  event_title=?,event_image=to_json(?::json),start_date=?, start_time=?::time, end_date=?, end_time=?::time, event_location=?, sector=?,organizer_department_name=?, organizer_user_name=?,  facebook_url=?, twitter_url=?, instagram_url=?, event_description=?, event_type=?, event_budget=?, committee_uuid=?, event_status=?, is_active=?,last_modified_by=?, last_modified_time=?,locality_name=? where event_detail_uuid=?;
+         basePath: RequestBody
+         jsonMaps:
+         
+          - jsonPath: $.RequestBody.eventTitle
+          
+          - jsonPath: $.RequestBody.eventString
+          
+          - jsonPath: $.RequestBody.startDate
+            type: DATE
+            dbType: DATE
+                        
+          - jsonPath: $.RequestBody.startTime
+      
+          - jsonPath: $.RequestBody.endDate
+            type: DATE
+            dbType: DATE
+
+          - jsonPath: $.RequestBody.endTime
+          
+          - jsonPath: $.RequestBody.eventLocation
+
+          - jsonPath: $.RequestBody.sector
+
+          - jsonPath: $.RequestBody.organizerDepartmentName
+
+          - jsonPath: $.RequestBody.organizerUsernName
+
+          - jsonPath: $.RequestBody.facebookUrl
+
+          - jsonPath: $.RequestBody.twitterUrl
+
+          - jsonPath: $.RequestBody.instagramUrl
+          
+          - jsonPath: $.RequestBody.eventDescription
+
+          - jsonPath: $.RequestBody.eventType
+
+          - jsonPath: $.RequestBody.eventBudget
+                    
+          - jsonPath: $.RequestBody.committeeUuid
+          
+          - jsonPath: $.RequestBody.eventStatus
+
+          - jsonPath: $.RequestBody.isActive
+           
+          - jsonPath: $.RequestBody.lastModifiedBy
+          
+          - jsonPath: $.RequestBody.lastModifiedDate
+          
+          - jsonPath: $.RequestBody.area 
+          
+          - jsonPath: $.RequestBody.eventDetailUuid   
+
+
+ - version: 1.0
+   name: Public Relation
+   description: update event status details in egpr_event_detail
+   fromTopic: update-pr-eventstatus-topic
+   isTransaction : true
+   queryMaps: 
+    - query: UPDATE egpr_event_detail SET event_status=?, last_modified_by=?, last_modified_time=? WHERE event_detail_uuid =?;
+      basePath: $.RequestBody.*
+      jsonMaps:           
+       - jsonPath: $.RequestBody.*.eventStatus
+           
+       - jsonPath: $.RequestBody.*.lastModifiedBy
+       
+       - jsonPath: $.RequestBody.*.lastModifiedTime
+   
+       - jsonPath: $.RequestBody.*.eventDetailUuid 
+        
+             

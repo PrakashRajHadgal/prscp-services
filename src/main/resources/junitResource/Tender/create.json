@@ -1,0 +1,102 @@
+{
+"RequestInfo":{
+   "apiId":"Rainmaker",
+   "ver":".01",
+   "ts":0,
+   "action":"_create",
+   "did":"1",
+   "key":"",
+   "msgId":"20170310130900|en_IN",
+   "authToken":"d21b7506-31be-4280-a94d-6c89b0805392",
+   "correlationId":"",
+   "userInfo":{
+      "id":167,
+      "userName":"9876567890",
+      "salutation":null,
+      "name":"Tushar",
+      "gender":null,
+      "mobileNumber":"9876567890",
+      "emailId":null,
+      "altContactNumber":null,
+      "pan":null,
+      "aadhaarNumber":null,
+      "permanentAddress":null,
+      "permanentCity":null,
+      "permanentPinCode":null,
+      "correspondenceAddress":null,
+      "correspondenceCity":null,
+      "correspondencePinCode":null,
+      "active":true,
+      "locale":null,
+      "type":"CITIZEN",
+      "accountLocked":false,
+      "accountLockedDate":0,
+      "fatherOrHusbandName":null,
+      "signature":null,
+      "bloodGroup":null,
+      "photo":null,
+      "identificationMark":null,
+      "createdBy":0,
+      "lastModifiedBy":1,
+      "tenantId":"ch",
+      "roles":[
+         {
+            "code":"CITIZEN",
+            "name":"Citizen",
+            "tenantId":"ch"
+         }
+      ],
+      "uuid":"6a9c0fb2-6579-441e-a46f-1e5e84ee6655",
+      "createdDate":"30-01-2020 06:07:52",
+      "lastModifiedDate":"02-03-2020 06:01:05",
+      "dob":null,
+      "pwdExpiryDate":"29-04-2020 06:07:52"
+   }
+}, 
+"RequestBody":{ 
+            "tenderNoticeUuid": "",
+            "tenderSubject": "Tender Notice Released",
+            "tenderDate": "2020-05-12 00:00:00",
+            "fileNumber": "abcdd",
+            "tenderDetail": null,
+            "publicationSize": "",
+            "userType": "",
+            "tenderNoticeStatus": "CREATED",
+            "isActive": true,
+            "tenantId": "ch.chandigarh",
+            "tenderNoticeId": "",
+            "createdBy": null,
+            "createdByName": null,
+            "notificationTemplateUuid": "",
+            "lastModifiedBy": null,
+            "createdTime": null,
+            "lastModifiedTime": null,
+            "noteContent": "",
+            "tenderDocument": [
+                {
+                    "fileStoreId": "458e5f45-9c1c-42b0-84de-1f6b45369c35"
+                }
+            ],
+            "tenderDocumentList": null,
+            "moduleCode": "PR",
+            "tenderBillList": null,
+            "publicationList": null,
+            "tenderPressList": null,
+            "emailContentJson": null,
+            "emailContentData": null,
+            "smsContent": null,
+            "notificationTemplateList": null,
+            "fromDate": null,
+            "toDate": null,
+            "defaultGrid": false,
+            "sourceUuid": null,
+            "active": true
+        
+ },
+ "AuditDetails":{
+  "createdBy":"1",
+  "createdTime":"12545554545",
+  "lastModifiedBy":"1",
+  "lastModifiedTime":"12545554545"
+ }
+}
